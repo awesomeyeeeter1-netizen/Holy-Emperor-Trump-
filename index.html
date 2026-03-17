@@ -21,13 +21,21 @@
 <body>
 
 <script>
-  const base64 = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUQEhAVFRAQEhUPFRAPEA8PDxAQFRIWFhUVFRUYHSggGBolGxUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDg0OGhAQFy0dHR0tLSstLS0tLS0tLS0tLS0rLSstLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/...";
+  // IMPORTANT: keep ONE full base64 string and reuse it (don’t truncate it)
+  const base64 = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/...REPLACE_WITH_YOUR_FULL_STRING...";
+
+  // Create ONE image, then clone it (much faster + avoids crashes)
+  const template = document.createElement("img");
+  template.src = base64;
+
+  const fragment = document.createDocumentFragment();
 
   for (let i = 0; i < 1000; i++) {
-    const img = document.createElement("img");
-    img.src = base64;
-    document.body.appendChild(img);
+    const img = template.cloneNode();
+    fragment.appendChild(img);
   }
+
+  document.body.appendChild(fragment);
 </script>
 
 </body>
