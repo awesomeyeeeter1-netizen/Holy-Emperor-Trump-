@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Trump</title>
+  <title>trump</title>
 
   <style>
     body {
       margin: 0;
-      padding: 0;
       display: grid;
       grid-template-columns: repeat(auto-fill, 100px);
       grid-auto-rows: 100px;
@@ -22,19 +21,17 @@
 </head>
 <body>
 
-<!-- TEST IMAGE (this helps confirm the file works) -->
+<!-- TEST IMAGE -->
 <img src="trump.png" width="200">
 
 <script>
   const src = "trump.png";
 
-  const template = document.createElement("img");
-  template.src = src;
-
   const fragment = document.createDocumentFragment();
 
-  for (let i = 0; i < 1005; i++) {
-    const img = template.cloneNode();
+  for (let i = 0; i < 1004; i++) {
+    const img = document.createElement("img");
+    img.src = src;
     fragment.appendChild(img);
   }
 
