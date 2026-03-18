@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Emperor Of The United States</title>
+  <title>1005 Images</title>
   <style>
     body {
       margin: 0;
@@ -21,12 +21,10 @@
 <body>
 
 <script>
-  // IMPORTANT: keep ONE full base64 string and reuse it (don’t truncate it)
-  const base64 = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/...REPLACE_WITH_YOUR_FULL_STRING...";
+  const src = "410-4103748_free-png-donald-trump-png-images-transparent-png.png";
 
-  // Create ONE image, then clone it (much faster + avoids crashes)
   const template = document.createElement("img");
-  template.src = base64;
+  template.src = src;
 
   const fragment = document.createDocumentFragment();
 
